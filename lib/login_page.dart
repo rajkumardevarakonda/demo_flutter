@@ -42,11 +42,12 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextField(
+                // keyboardType: TextInputType.phone,
                 controller: emailText,
                 decoration: InputDecoration(
-                    hintText: 'Enter email',
+                    hintText: 'email',
                     focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(11),
+                        borderRadius: BorderRadius.circular(31),
                         borderSide:  BorderSide(
                             color:Colors.orange, width: 2)),
                     enabledBorder: OutlineInputBorder(
@@ -70,26 +71,24 @@ class _MyHomePageState extends State<MyHomePage> {
                   obscureText: false,
                   obscuringCharacter:'*',
                   decoration: InputDecoration(
-                    hintText: 'Enter Password here',
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(21),
+                    hintText: 'Password',
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(31),
                         borderSide: const BorderSide(
-                            color: Colors.black, width: 2),),
+                            color: Colors.green, width: 2),),
                         enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(21),
+                    borderRadius: BorderRadius.circular(11),
                       borderSide: BorderSide(
-                          color: Color.fromARGB(255, 19, 19, 15), width: 2)),
+                          color: Colors.black, width: 2)),
                     suffixIcon: IconButton(
-                  icon: Icon(Icons.remove_red_eye, color: Colors.red,),
+                  icon: Icon(Icons.remove_red_eye, color: Colors.green,),
                 onPressed: () {  },
               ),),
               ),
               ElevatedButton(onPressed: (){
                String  uEmail = emailText.text.toString();
                String uPass = passText.text;
-              }, child: Text(
-                'Login'
-              ))
+              }, child: Text('Login'))
             ],
           ),
         ),
