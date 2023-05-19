@@ -47,8 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextField(
-                  controller: passText,
-                  decoration: InputDecoration(
+                    decoration: InputDecoration(
                     hintText: 'Full Name',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(1),
@@ -66,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   hintText: 'email',
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(1),
-                      borderSide: BorderSide(color: Colors.orange, width: 2)),
+                      borderSide: BorderSide(color: Colors.orange, width: 8)),
                   // enabledBorder: OutlineInputBorder(
                   //     borderRadius: BorderRadius.circular(11),
                   //     borderSide: BorderSide(
@@ -87,8 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 11,
               ),
               TextField(
-                controller: passText,
-                obscureText: true,
+                obscureText: false,
                 obscuringCharacter: '*',
                 decoration: InputDecoration(
                   hintText: 'Password',
@@ -100,32 +98,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   //     borderRadius: BorderRadius.circular(11),
                   //    borderSide: BorderSide(
                   //        color: Colors.black, width: 2)),
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                      Icons.remove_red_eye,
-                      color: Colors.green,
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
-              ),
-              Container(
-                height: 11,
-              ),
-              TextField(
-                controller: passText,
-                obscureText: true,
-                obscuringCharacter: '*',
-                decoration: InputDecoration(
-                  hintText: 'Confirm Password',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(1),
-                    borderSide: const BorderSide(color: Colors.green, width: 2),
-                  ),
-
-                  // enabledBorder: OutlineInputBorder(
-                  //     borderRadius: BorderRadius.circular(11),
-                  //     borderSide: BorderSide(color: Colors.black, width: 2)),
                   suffixIcon: IconButton(
                     icon: Icon(
                       Icons.remove_red_eye,

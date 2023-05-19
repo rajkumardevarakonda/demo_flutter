@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 import 'login_page.dart';
@@ -38,7 +39,7 @@ class MyWidget extends StatelessWidget {
                     onPressed: () {},
                   ),
                   TextButton(
-                    child: Text('Sign out'),
+                    child: const Text('Sign out'),
                     onPressed: () {
                       Navigator.push(
                           context,

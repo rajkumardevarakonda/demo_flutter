@@ -1,4 +1,3 @@
-// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_1/sign_up.dart';
 
@@ -78,7 +77,7 @@ class _MyLoginState extends State<MyLogin> {
               ),
               TextField(
                 controller: passText,
-                obscureText: true,
+                obscureText: false,
                 obscuringCharacter: '*',
                 decoration: InputDecoration(
                   hintText: 'Password',
