@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'login_page.dart';
+
 void main() {
   runApp(const MyWidget());
 }
@@ -14,7 +16,7 @@ class MyWidget extends StatelessWidget {
         home: Scaffold(
           appBar: AppBar(
             title: const Center(
-              child: Text("website"),
+              child: Text("Gallery"),
             ),
             actions: [
               Row(
@@ -34,6 +36,15 @@ class MyWidget extends StatelessWidget {
                       color: Colors.black54,
                     ),
                     onPressed: () {},
+                  ),
+                  TextButton(
+                    child: Text('Sign out'),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MyLogin()));
+                    },
                   ),
                 ],
               ),
