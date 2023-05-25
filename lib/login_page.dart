@@ -33,6 +33,7 @@ class MyLogin extends StatefulWidget {
 class _MyLoginState extends State<MyLogin> {
   var emailText = TextEditingController();
   var passText = TextEditingController();
+  var _isLogin = true;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +49,7 @@ class _MyLoginState extends State<MyLogin> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextField(
+              TextFormField(
                 // keyboardType: TextInputType.phone,
                 controller: emailText,
                 decoration: InputDecoration(
@@ -71,13 +72,24 @@ class _MyLoginState extends State<MyLogin> {
                     color: Colors.orange,
                   ),
                 ),
+                keyboardType: TextInputType.emailAddress,
+                autocorrect: false,
+                textCapitalization: TextCapitalization.none,
+                validator: (value){
+                  if (value == null ||
+                       value.trim().isEmpty ||
+                       !value.contains('@')){
+                    return 'please enter a valid email address.';
+                  }
+                  return null;
+                }
               ),
               Container(
                 height: 11,
               ),
               TextField(
                 controller: passText,
-                obscureText: false,
+                obscureText: true,
                 obscuringCharacter: '*',
                 decoration: InputDecoration(
                   hintText: 'Password',
@@ -102,25 +114,29 @@ class _MyLoginState extends State<MyLogin> {
               ),
               ElevatedButton(
                   onPressed: () {
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const MyWidget()));
-                    // String uEmail = emailText.text.toString();
-                    // String uPass = passText.text;
                   },
-                  child: Text('Sign In')),
+                  child:  Text(_isLogin ? 'Login' : 'Signup'),
+              ),
               Container(
                 height: 11,
               ),
-              ElevatedButton(
+              TextButton(
                   onPressed: () {
+                    setState(() {
+                      _isLogin = !_isLogin;
+                    });
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const MyHomePage()));
                   },
-                  child: Text('Sign Up')),
+                  child: Text(_isLogin ? 'Create an account' : 'I already have an account'),
+              ),
             ],
           ),
         ),
